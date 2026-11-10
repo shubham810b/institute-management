@@ -360,7 +360,7 @@ export const AttendancePage: React.FC<AttendancePageProps> = ({
           <div className="divide-y divide-slate-100">
             {filteredStudents.length === 0 ? (
               <div className="p-12 text-center text-slate-400 text-sm">
-                No students match your query.
+                No students enrolled yet. Add students in the Students tab to start marking daily attendance.
               </div>
             ) : (
               filteredStudents.map((s) => {

@@ -333,9 +333,9 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
       {/* 4. Reset & Maintenance */}
       <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h4 className="font-bold text-slate-900 text-sm">Demo Data & Cache Maintenance</h4>
+          <h4 className="font-bold text-slate-900 text-sm">Clear Database & Fresh Start</h4>
           <p className="text-xs text-slate-500 mt-0.5">
-            Reset all students, attendance registers, and payment records back to pristine initial state
+            Wipe all students, attendance registers, and fee payments to keep your system completely clean
           </p>
         </div>
 
@@ -345,7 +345,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-rose-200 bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-bold transition-colors"
         >
           <RotateCcw className="w-4 h-4" />
-          <span>Reset All Demo Records</span>
+          <span>Clear All Records</span>
         </button>
       </div>
     </div>

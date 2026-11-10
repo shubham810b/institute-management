@@ -130,8 +130,19 @@ export const ReportsPage: React.FC<ReportsPageProps> = ({
       </div>
 
       {/* Report Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {filteredStudents.map((student) => {
+      {filteredStudents.length === 0 ? (
+        <div className="bg-white rounded-3xl p-12 text-center border border-slate-100 shadow-sm">
+          <div className="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mx-auto mb-3">
+            <FileText className="w-7 h-7" />
+          </div>
+          <h3 className="font-bold text-base text-slate-900">No Student Reports Available</h3>
+          <p className="text-xs text-slate-500 max-w-sm mx-auto mt-1">
+            Enroll students and record attendance to automatically generate monthly parent reports and PDF cards.
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {filteredStudents.map((student) => {
           const report = calculateMonthlyReport(student, attendanceRecords, selectedMonth);
           const isWarning = report.attendancePercentage < 75;
 
@@ -227,6 +238,7 @@ export const ReportsPage: React.FC<ReportsPageProps> = ({
           );
         })}
       </div>
+      )}
     </div>
   );
 };

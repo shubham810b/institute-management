@@ -277,8 +277,16 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
             <tbody className="divide-y divide-slate-100 text-xs">
               {filteredStudents.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="py-12 text-center text-slate-400">
-                    No students match the selected filter criteria.
+                  <td colSpan={8} className="py-16 text-center">
+                    <div className="max-w-sm mx-auto flex flex-col items-center">
+                      <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+                        <Users className="w-6 h-6" />
+                      </div>
+                      <h4 className="text-sm font-bold text-slate-900">No Students Enrolled Yet</h4>
+                      <p className="text-xs text-slate-500 mt-1">
+                        Your database is clean. Click "+ New Student" at the top right to enroll your first student.
+                      </p>
+                    </div>
                   </td>
                 </tr>
               ) : (

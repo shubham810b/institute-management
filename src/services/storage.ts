@@ -2,12 +2,12 @@ import { Student, AttendanceRecord, FeeTransaction, InstituteSettings, WhatsAppT
 import { INITIAL_STUDENTS, INITIAL_ATTENDANCE, INITIAL_TRANSACTIONS, INITIAL_SETTINGS, INITIAL_TEMPLATES } from '../data/initialData';
 
 const KEYS = {
-  STUDENTS: 'edupulse_students_v1',
-  ATTENDANCE: 'edupulse_attendance_v1',
-  TRANSACTIONS: 'edupulse_transactions_v1',
-  SETTINGS: 'edupulse_settings_v1',
-  TEMPLATES: 'edupulse_templates_v1',
-  ACTIVE_ROLE: 'edupulse_active_role_v1',
+  STUDENTS: 'edupulse_students_v2',
+  ATTENDANCE: 'edupulse_attendance_v2',
+  TRANSACTIONS: 'edupulse_transactions_v2',
+  SETTINGS: 'edupulse_settings_v2',
+  TEMPLATES: 'edupulse_templates_v2',
+  ACTIVE_ROLE: 'edupulse_active_role_v2',
 };
 
 // Local storage helpers
@@ -101,11 +101,18 @@ export const saveStoredTemplates = (templates: WhatsAppTemplate[]): void => {
   localStorage.setItem(KEYS.TEMPLATES, JSON.stringify(templates));
 };
 
+// Clear all records
+export const clearAllData = (): void => {
+  localStorage.setItem(KEYS.STUDENTS, JSON.stringify([]));
+  localStorage.setItem(KEYS.ATTENDANCE, JSON.stringify([]));
+  localStorage.setItem(KEYS.TRANSACTIONS, JSON.stringify([]));
+};
+
 // Reset demo data
 export const resetToDemoData = (): void => {
-  localStorage.setItem(KEYS.STUDENTS, JSON.stringify(INITIAL_STUDENTS));
-  localStorage.setItem(KEYS.ATTENDANCE, JSON.stringify(INITIAL_ATTENDANCE));
-  localStorage.setItem(KEYS.TRANSACTIONS, JSON.stringify(INITIAL_TRANSACTIONS));
+  localStorage.setItem(KEYS.STUDENTS, JSON.stringify([]));
+  localStorage.setItem(KEYS.ATTENDANCE, JSON.stringify([]));
+  localStorage.setItem(KEYS.TRANSACTIONS, JSON.stringify([]));
   localStorage.setItem(KEYS.SETTINGS, JSON.stringify(INITIAL_SETTINGS));
   localStorage.setItem(KEYS.TEMPLATES, JSON.stringify(INITIAL_TEMPLATES));
 };
